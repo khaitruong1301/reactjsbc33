@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ChangeCarColor from "./ChangeCarColor";
 
 export default class StateDemo extends Component {
   state = {
@@ -69,9 +70,11 @@ export default class StateDemo extends Component {
             <div className="card-body">
                 <button className="btn btn-danger" onClick={()=>{
                     this.randomAvatar();
-                }}>Random</button>
+                }}>Random</button> 
             </div>
         </div>
+        <hr />
+        <ChangeCarColor />
 
       </div>
     );

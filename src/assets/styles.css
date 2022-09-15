@@ -1,3 +1,7 @@
 .color-red{
     color:red;
 }
+/*Xử lý link hình trong file css thì dùng absolute link (Đường dẫn tương đối theo cấu trúc thư mục, không được vượt qua thư mục src)*/
+.bg-img{
+    background-image: url(../assets/img/products/black-car.jpg);
+}
