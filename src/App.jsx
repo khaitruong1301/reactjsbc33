@@ -4,7 +4,10 @@ import React from 'react'
 import Home from './Components/Home/Home'
 import DemoDataBinding from './DataBinding/DemoDataBinding/DemoDataBinding'
 import HandleEvent from './HandleEvent/HandleEvent'
+import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet/BaiTapXemChiTiet'
+import DemoChildrenProps from './Props/DemoChildrenProps/DemoChildrenProps'
 import ProductList from './Props/DemoProps/ProductList'
+import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore'
 import ShoesApp from './Props/ShoesApp/ShoesApp'
 import RenderArrayComponent from './RenderArrayComponent/RenderArrayComponent'
 import HeaderLogin from './StateDemo/HeaderLogin'
@@ -22,7 +25,10 @@ export default function App() {
         {/* <StateDemo /> */}
         {/* <RenderArrayComponent /> */}
         {/* <ProductList /> */}
-        <ShoesApp />
+        {/* <ShoesApp /> */}
+        {/* <BaiTapXemChiTiet /> */}
+        {/* <ExerciseCarStore /> */}
+        <DemoChildrenProps />
     </div>
   )
 }
