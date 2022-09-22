@@ -1,6 +1,8 @@
 //rfc
 
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import HeaderHome from './Components/HeaderHome/HeaderHome'
 import Home from './Components/Home/Home'
 import DemoDataBinding from './DataBinding/DemoDataBinding/DemoDataBinding'
 import HandleEvent from './HandleEvent/HandleEvent'
@@ -17,18 +19,12 @@ import StyleDemo from './StyleDemo/StyleDemo'
 export default function App() {
   return (
     <div>
-        {/* <Home /> */}
-        {/* <DemoDataBinding /> */}
-        {/* <HandleEvent />  */}
-        {/* <HeaderLogin /> */}
-        {/* <StyleDemo /> */}
-        {/* <StateDemo /> */}
-        {/* <RenderArrayComponent /> */}
-        {/* <ProductList /> */}
-        {/* <ShoesApp /> */}
-        {/* <BaiTapXemChiTiet /> */}
-        {/* <ExerciseCarStore /> */}
-        <DemoChildrenProps />
+      <HeaderHome />
+      {/* outlet Là vị trí hiển thị component route con  */}
+      <div style={{minHeight:600}}>
+        <Outlet />
+      </div>
+      <footer className='bg-dark text-light p-5 text-center'>footer</footer>
     </div>
   )
 }
