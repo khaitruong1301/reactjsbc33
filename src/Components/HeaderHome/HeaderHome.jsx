@@ -21,6 +21,9 @@ export default class HeaderHome extends Component {
                         <li className="nav-item">
                             <NavLink className={({isActive}) => isActive ? 'nav-link bg-warning text-white' : 'nav-link'}  to="/formdemo"  style={({isActive}) => isActive ? {color:'red',borderRadius:'5px'} : {}}>React Form</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className={({isActive}) => isActive ? 'nav-link bg-warning text-white' : 'nav-link'}  to="/reactlifecycle"  style={({isActive}) => isActive ? {color:'red',borderRadius:'5px'} : {}}>React lifecycle</NavLink>
+                        </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">

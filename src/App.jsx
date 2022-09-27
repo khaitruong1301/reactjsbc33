@@ -21,7 +21,7 @@ export default function App() {
     <div>
       <HeaderHome />
       {/* outlet Là vị trí hiển thị component route con  */}
-      <div style={{minHeight:600}}>
+      <div style={{minHeight:800}}>
         <Outlet />
       </div>
       <footer className='bg-dark text-light p-5 text-center'>footer</footer>

@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import Detail from './pages/Detail';
 import Page404 from './pages/Page404';
 import ReactFormDemo from './pages/ReactFormDemo';
+import ReactLifecycle from './pages/ReactLifecycle/ReactLifecycle';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,7 @@ root.render(
             <Route path='register' element={<Register />}></Route>
             <Route path='detail' element={<Detail />}></Route>
             <Route path='formdemo' element={<ReactFormDemo />}></Route>
+            <Route path='reactlifecycle' element={<ReactLifecycle />}></Route>
             <Route path='*' element={<Navigate to="" />}></Route>
             {/* <Route path='*' element={<Page404 />}></Route> */}
           </Route>
