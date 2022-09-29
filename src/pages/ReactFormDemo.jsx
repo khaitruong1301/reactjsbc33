@@ -89,6 +89,8 @@ export default class ReactFormDemo extends Component {
         //Cập nhật lại state
         this.setState({
             arrProduct:this.state.arrProduct
+        }, ()=> {
+            this.luuStorage();
         })
     }
 
@@ -110,6 +112,8 @@ export default class ReactFormDemo extends Component {
         //setState để render lại giao diện
         this.setState({
             arrProduct:this.state.arrProduct
+        },() => {
+            this.luuStorage();
         });
     }
 
@@ -130,8 +134,40 @@ export default class ReactFormDemo extends Component {
 
         this.setState({
             arrProduct:arrProduct
+        }, () => {
+            this.luuStorage();
         })
     }
+
+
+    luuStorage  = () => {
+        let stringArrProduct = JSON.stringify(this.state.arrProduct);
+        localStorage.setItem('arrProduct',stringArrProduct);
+
+    }
+    layStore = () => {
+        if(localStorage.getItem('arrProduct')) //Nếu store có giá trị thì lấy dữ liệu từ store trả về
+        {
+             let arrProduct = JSON.parse(localStorage.getItem('arrProduct'));
+             return arrProduct;
+        }
+        return [];
+    }
+
+    static getDerivedStateFromProps(newProps,currentState){
+        // let arrProduct = [];
+        // if(localStorage.getItem('arrProduct')) //Nếu store có giá trị thì lấy dữ liệu từ store trả về
+        // {
+        //      arrProduct = JSON.parse(localStorage.getItem('arrProduct'));
+        // }
+        // let arrProductStorage = arrProduct;
+        // //Trước khi component load giao diện thay đổi state ở đây
+        // let newState = {...currentState, arrProduct: arrProductStorage};
+        // return newState;
+    }
+
+
+
 
     render() {
         let {id,name,price,image,description,productType} = this.state.values;
@@ -196,5 +232,13 @@ export default class ReactFormDemo extends Component {
             <Tables arrProduct={this.state.arrProduct} delProduct={this.deleteProduct} editProduct={this.editProduct} />
             </div>
         )
+    }
+
+    componentDidMount(){
+        //Sau khi giao diện render  => lấy dữ liệu từ store đỗ lên state
+        //window.onload 
+        this.setState({
+            arrProduct:this.layStore()
+        })
     }
 }

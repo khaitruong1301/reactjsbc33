@@ -9,7 +9,8 @@ export default class ReactLifecycle extends Component {
             number: 1,
             obLike: {
                 like:1
-            }
+            },
+            count:60
         }
         console.log('constructor');
     }
@@ -54,13 +55,35 @@ export default class ReactLifecycle extends Component {
 
                 <hr />
                 <ChildComponent obLike={this.state.obLike} />
+                <hr />
+                <h3>Count: {this.state.count}</h3>
+                
             </div>
         )
     }
+
+    timeout = null;
+
     componentDidMount() {
 
         //Thư viện áp lên các thẻ html, hoặc các nghiệp vụ liên quan đến api
         // => setState 
-        console.log('componentDidMount')
+        console.log('componentDidMount');
+
+    //    this.timeout = setInterval(()=>{
+    //         this.setState({
+    //             count: this.state.count - 1
+    //         });
+
+    //         console.log('123');
+    //     },1000)
+
+    }
+
+    componentWillUnmount() {
+        //Chạy trước khi component mất khỏi giao diện
+        //Dùng để clear các service chạy ngầm của ứng dụng khi component này không còn load trên ui nữa
+        // clearInterval(this.timeout);
+
     }
 }

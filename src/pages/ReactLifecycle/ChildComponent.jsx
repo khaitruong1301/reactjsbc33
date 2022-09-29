@@ -48,4 +48,15 @@ export default class ChildComponent extends PureComponent {
         console.log('componentDidMount child')
     }
 
+    componentDidUpdate(prevProps,prevState) {
+        //Khi 1 thuộc tính trong state thay đổi sẽ kéo các thuộc tính khác thay đổi 
+        //Lưu ý: Khi setState tại lifecycle này phải có if
+        console.log('prevProps',prevProps);
+        console.log('prevState',prevState);
+        // if(prevProps.obLike.like !== ...) {
+        //     this.setState({
+
+        //     })
+        // }
+    }
 }
