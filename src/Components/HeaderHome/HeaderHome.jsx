@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-
-export default class HeaderHome extends Component {
+import { connect } from 'react-redux'
+import {NavLink} from 'react-router-dom'
+ class HeaderHome extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -29,12 +29,18 @@ export default class HeaderHome extends Component {
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/tanggiamfont">Demo - tăng giảm fontsize</NavLink>
                                 <NavLink className="dropdown-item" to="/baitapchonxe">Demo chọn xe</NavLink>
+                                <NavLink className="dropdown-item" to="/products">Demo giỏ hàng</NavLink>
                             </div>
                         </li>
                     </ul>
                     <form className="d-flex my-2 my-lg-0">
-                        <input className="form-control me-sm-2" type="text" placeholder="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <NavLink style={{textDecoration:'none'}} className="nav-item text-light px-5" to={'cart'}>
+                            <i className='fa fa-cart-plus'></i> ({this.props.cart.length})
+                                -
+                            {this.props.cart.reduce((tt,itemCart,index)=>{
+                                return tt += itemCart.quantity * itemCart.price;
+                            },0).toLocaleString()} $
+                        </NavLink>
                     </form>
                 </div>
             </nav>
@@ -42,3 +48,17 @@ export default class HeaderHome extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+
+    cart: state.cartReducer.cart
+
+})
+
+
+
+export default connect(mapStateToProps)(HeaderHome)
+
+
+
+
